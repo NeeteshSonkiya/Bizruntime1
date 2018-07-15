@@ -1,0 +1,23 @@
+
+using System;
+
+
+namespace Rextester
+{
+    public class Variable3
+    {
+        public static void Main(string[] args)
+        {
+           int i = 10;
+           float f = 809.908f;
+           double d = 98908.2222221122222220d;
+            decimal d1 = 90.3232333333333333m;
+            
+            Console.WriteLine(i);
+            Console.WriteLine(f);
+            Console.WriteLine(d);
+            Console.WriteLine(d1);
+            
+        }
+    }
+}

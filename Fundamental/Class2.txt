@@ -1,0 +1,22 @@
+
+using System;
+
+
+namespace Rextester
+{
+    public class Class2
+    {
+        public static void Main(string[] args)
+        {
+           int i = 10;
+           int isNumber = 10;
+            if (isNumber != 10)
+            Console.WriteLine(i);
+            else if (isNumber == 11)
+                Console.WriteLine(++i);
+           else
+                Console.WriteLine(i += 2);
+            
+        }
+    }
+}

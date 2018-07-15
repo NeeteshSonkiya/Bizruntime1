@@ -1,0 +1,22 @@
+
+using System;
+
+namespace Rextester
+{
+    public class Variable1
+    {
+        public static void Main(string[] args)
+        {
+           int i = 10;
+            byte b = 22;
+            double d = 212.1;
+            float f = 34.3f;
+            bool bo = true;;
+            Console.WriteLine(bo);
+            Console.WriteLine(b);
+            Console.WriteLine(d);
+          Console.WriteLine(f);
+            Console.WriteLine(i);
+        }
+    }
+}

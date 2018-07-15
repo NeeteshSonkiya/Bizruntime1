@@ -1,0 +1,26 @@
+
+
+using System;
+
+namespace Rextester
+{
+    public class Variable
+    {
+	int x;
+	static int y;
+        public static void Main(string[] args)
+        {
+           int i;
+            byte b;
+            double d;
+            //float f = 34.3;
+            bool bo;
+            Console.WriteLine(bo);
+            Console.WriteLine(b);
+            Console.WriteLine(d);
+          //  Console.WriteLine(f);
+            Console.WriteLine(i);
+        }
+    }
+}
+// compile time error variable not initialise

@@ -1,0 +1,17 @@
+
+using System;
+
+namespace Rextester
+{
+    public class Variable2
+    {
+        public static void Main(string[] args)
+        {
+           int i = 10;
+            byte ? b = null;
+	// byte b = null; error
+            Console.WriteLine(i);
+            Console.WriteLine(b);
+        }
+    }
+}
