@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <title>JSON EXXAMPLE</title>
+ </head>
+ <p id="j2"></p>
+ <body>
+ <script>
+	var myObj = {"name" : "Oliver" , "age": 31, "city": "Newyork"};
+	var myJson = JSON.stringify(myObj);
+	document.getElementById("j2").innerHTML = myJson ;
+	</script>  <!--converting json object into string-->
+ </body>
+</html>
