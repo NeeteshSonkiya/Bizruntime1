@@ -1,0 +1,22 @@
+<html >
+<head>
+<title>JavaScript JSON.parse example </title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body onload="fn();">
+<h1>This is an example of JavaScript JSON.stringify</h1>
+<script type="text/javascript">
+        function fn()
+         {
+          var w = {};
+          w.PHP = "w3resource PHP tutorial";
+          w.Examples = 500;
+          var w_JSON = JSON.stringify(w); // w3r_JSON holds {"PHP":"w3resource PHP tutorial","Examples":500}
+          alert(w_JSON);
+         	var convertToJS = JSON.parse(w_JSON);
+         	var StringAgain = JSON.stringify(w);
+         	alert(StringAgain);
+         }
+  </script>
+  </body>
+  </html>
