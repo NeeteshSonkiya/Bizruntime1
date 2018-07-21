@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <title>Document</title>
+ </head>
+ <body>
+  <script>
+	document.write("Nested Loop Example")
+	outerloop:
+	for(var i = 0; i < 20; i++)
+	{
+		document.write("outer loop" + i);
+		innerloop:
+		for(var j = 0; i<10; i++)
+		{
+			if (i == j) continue outer;
+			if (i > j ) continue inner;
+			if (i > 5) break;
+			document.write("inner loop" + j);
+		}
+	}
+  </script>
+ </body>
+</html>

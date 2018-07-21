@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <title>Object</title>
+ </head>
+ <body>
+ <p>Creating a object using constructor notation</p>
+  <script type="text/javascript">
+    function Employee(firstName, lastName) 
+    {
+        this.firstName = firstName;
+        this.lastName = lastName;
+
+        this.getFullName = function () 
+        {
+            return this.firstName + " " + this.lastName;
+        }
+    }
+
+    var employee = new Employee("Neetesh", "Sonkiya");
+    document.write("FirstName : " + employee.firstName + "<br/>");
+    document.write("LastName : " + employee.lastName + "<br/>");
+    document.write("FullName : " + employee.getFullName() + "<br/>");
+
+	document.write("<br>Creating an object in JavaScript using literal notation<br>");
+
+    var student = 
+    {
+        firstName : "Rahul",
+        lastName : "Sharma",
+
+        getFullName : function () 
+        {
+            return this.firstName + " " + this.lastName;
+        }
+    }
+
+    document.write("<br>FirstName : " + student.firstName + "<br/>");
+    document.write("LastName : " + student.lastName + "<br/>");
+    document.write("FullName : " + student.getFullName() + "<br/>");
+
+</script>
+ </body>
+</html>
