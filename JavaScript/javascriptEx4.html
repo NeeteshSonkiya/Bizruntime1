@@ -1,0 +1,12 @@
+<form>
+	Enter Number<input type='text' name='num1'/>
+	<input type='button' value='check' onclick='checkNumber()'/>
+</form>
+<p id="demo"></p>
+<script>
+	function checkNumber()
+	{
+		var x = document.forms[0].num1.value;
+		document.getElementById("demo").innerHTML = isNaN(x);
+	}
+</script>

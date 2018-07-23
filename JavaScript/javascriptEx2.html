@@ -1,0 +1,20 @@
+<html>
+<body>
+  <p>Creating a javascript Object</p>
+
+  <p id="demo"></p>
+  <p id="demo1"></p>
+  <script>
+var person = new Object();
+person.firstName = "johny";
+person.lastName = "deep";
+person.age = 50;
+person.salary = 32011;
+
+var x = person;
+x.age = 32;
+document.getElementById("demo").innerHTML = person.firstName + " " + person.lastName + " " + x.age;
+document.getElementById("demo1").innerHTML =person["firstName"] + " is " + person["age"] + " years old.";
+
+  </script>
+</html>

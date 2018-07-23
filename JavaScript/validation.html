@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <title>Validation Form</title>
+ </head>
+ <body>
+ <h1 style="text-align:center">Validation Form</h1>
+  <form style="text-align:center" name="valForm" onsubmit="return validation()" method="post">
+ <p> First Name: <input type="text" size="40" name="firstName"><br></p>
+  <p>Last Name: <input type="text" size="40" name="lastName"><br></p>
+  <p>E-mail : <input type="text" name="email"><br></p>
+  <p>Contact : <input type="text" name="contact"><br></p>
+  <p>Address: <textarea cols="65" name="address" placeholder="Address"></textarea><br></p>
+  <p>Gender: <input type="radio" name="gender" value="male"> Male
+					  <input type="radio" name="gender" value="female"> Female<br></p>
+	<p>Skills: <input type="checkbox" name="skills" value="C">C
+					<input type="checkbox" name="skills" value="C++">C++
+					<input type="checkbox" name="skills" value="C#">C#
+					<input type="checkbox" name="skills" value="Java">Java
+					<input type="checkbox" name="skills" value="Python">Python <br></p>
+	<p>Qualification : <select type="text" name="edu">
+										<option>select</option>
+										<option>BE</option>
+										<option>B.TECH</option>
+										<option>ME</option>
+										<option>M.TECH</option>
+									</select><br></p>
+		<input type="submit" value="submit" onclick="display()" name="Submit">
+			<input type="reset" value="Reset" name="Reset">
+		</p>
+  </form>
+  <script>
+
+function validation()
+{
+  var firstName = document.valForm.firstName.value;
+  var lastName = document.valForm.lastName.value;
+  var email = document.valForm.email.value;
+  var contact = document.valForm.contact.value;
+  var address = document.valForm.address.value;
+
+  var gender = document.valForm.gender.value;
+
+	if (firstName == "" || firstName == null)
+	{
+		alert("Please Enter your FirstName.")
+
+		return false;
+	}
+	if (lastName =="")
+	{
+		window.alert("Please Enter your LastName");
+
+		return false;
+	}
+	if (email=="")
+	{
+		window.alert("Please Enter Your Email ");
+
+		return false;
+	}
+	if (email.indexOf("@", 0) < 0)
+	{
+		window.alert("Please Enter valid Email");
+
+		return false;
+	}
+	 if (email.indexOf(".", 0) < 0)
+    {
+        window.alert("Please enter a valid e-mail address.");
+
+        return false;
+    }
+	if (contact == "")
+    {
+        window.alert("Please enter your telephone number.");
+
+        return false;
+    }
+	if (document.valForm.edu.selectedIndex=="")
+    {
+        alert("Please enter your course.");
+
+        return false;
+    }
+    if (document.valForm.skills.checkbox.unchecked)
+      {
+          alert("Please enter your skills.");
+          return false;
+      }
+}
+</script>
+ </body>
+</html>

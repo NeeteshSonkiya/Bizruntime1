@@ -1,0 +1,3 @@
+this is ajax tutorial .
+ajax is not a programming language.
+ajax is a server side technology 
