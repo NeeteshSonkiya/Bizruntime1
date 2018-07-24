@@ -4,96 +4,23 @@
   <title>Validation Form</title>
  </head>
  <body>
- <h1 style="text-align:center">Validation Form</h1>
-  <form style="text-align:center" name="valForm" onsubmit=" validation()" method="post">
- <p> First Name: <input type="text" size="40" name="firstName"><br></p>
-  <p>Last Name: <input type="text" size="40" name="lastName"><br></p>
-  <p>E-mail : <input type="text" name="email"><br></p>
-  <p>Contact : <input type="text" name="contact"><br></p>
-  <p>Address: <textarea cols="65" name="address" placeholder="Address"></textarea><br></p>
-  <p>Gender: <input type="radio" name="gender" value="male"> Male
-					  <input type="radio" name="gender" value="female"> Female<br></p>
-	<p>Skills: <input type="checkbox" name="skills" value="C">C
-					<input type="checkbox" name="skills" value="C++">C++
-					<input type="checkbox" name="skills" value="C#">C#
-					<input type="checkbox" name="skills" value="Java">Java
-					<input type="checkbox" name="skills" value="Python">Python <br></p>
-	<p>Qualification : <select type="text" name="edu">
-										<option>select</option>
-										<option>BE</option>
-										<option>B.TECH</option>
-										<option>ME</option>
-										<option>M.TECH</option>
-									</select><br></p>
-		<p><input type="submit" onclick="display()" value="send" name="Submit">	 
-			<input type="reset" value="Reset" name="Reset"> 
-		</p>		 
-  </form>
-  <script>
-	var firstName = document.valForm.firstName.value;
-	var lastName = document.valForm.lastName.value;
-	var email = document.valForm.email.value;
-	var contact = document.valForm.contact.value;
-	var address = document.valForm.address.value;
-	var skills = document.valForm.skills.value;
-	var gender = document.valForm.gender.value;
-	var edu = document.valForm.edu.value;
-function validation()
-{
-	if (firstName.value == "")
-	{
-		window.alert("Please Enter your FirstName.")
-		firstName.focus();
-		return false;
-	}
-	if (lastName.value =="")
-	{
-		window.alert("Please Enter your LastName");
-		lastName.focus();
-		return false;
-	}
-	if (email.value=="")
-	{
-		window.alert("Please Enter Your Email ");
-		email.focus();
-		return false;
-	}
-	if (email.value.indexOf("@", 0) < 0)
-	{
-		window.alert("Please Enter valid Email");
-		email.focus();
-		return false;
-	}
-	 if (email.value.indexOf(".", 0) < 0)                
-    {
-        window.alert("Please enter a valid e-mail address.");
-        email.focus();
-        return false;
-    }
-	if (contact.value == "")                          
-    {
-        window.alert("Please enter your telephone number.");
-        contact.focus();
-        return false;
-    }
-	if (edu.selectedIndex <= 1)                 
-    {
-        alert("Please enter your course.");
-        what.focus();
-        return false;
-    }
-}
-function display()
-{
-	document.write(firstName);
-	document.write(lastName);
-	document.write(email);
-	document.write(contact);
-	document.write(address);
-	document.write(gender);
-	document.write(skills);
-	document.write(edu);
-}
-script>
+ <script>  
+function validateemail()  
+{  
+var x=document.myform.email.value;  
+var atposition=x.indexOf("@");  
+var dotposition=x.lastIndexOf(".");  
+if (atposition<1 || dotposition<atposition+2 || dotposition+2>=x.length){  
+  alert("Please enter a valid e-mail address \n atpostion:"+atposition+"\n dotposition:"+dotposition);  
+  return false;  
+  }  
+}  
+</script>  
+<body>  
+<form name="myform"  method="post" action="post" onsubmit="return validateemail();">  
+Email: <input type="text" name="email"><br/>  
+  
+<input type="submit" value="register">  
+</form> 
  </body>
 </html>

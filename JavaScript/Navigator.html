@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html>
+<body>
+
+    <h2>The Navigator Object</h2>
+
+    <p>The product property returns the product name of the browser.</p>
+
+    <p>Do not rely on it! Most browsers returns "Gecko" as product name!</p>
+
+    <p id="demo"></p>
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+    <p id="demo4"></p>
+    <p id="demo5"></p>
+    <p id="demo6"></p>
+
+    <script>
+        document.getElementById("demo").innerHTML =
+            "navigator.product is " + navigator.product;
+        document.getElementById("demo1").innerHTML = navigator.appVersion;
+        document.getElementById("demo2").innerHTML =
+            navigator.userAgent;
+        document.getElementById("demo3").innerHTML =
+            "navigator.platform is " + navigator.platform;
+        document.getElementById("demo4").innerHTML =
+            "navigator.language is " + navigator.language;
+        document.getElementById("demo5").innerHTML =
+            "navigator.onLine is " + navigator.onLine;
+        document.getElementById("demo6").innerHTML =
+            "javaEnabled is " + navigator.javaEnabled();
+    </script>
+
+</body>
+</html>

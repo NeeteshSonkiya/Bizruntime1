@@ -1,0 +1,17 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>DOM</title>
+    <p id="demo">This is example of using GetElementById </p><br />
+    <h1>Example of DOM </h1> <br>
+    <p id="intro"></p>
+</head>
+<body>
+    <script>
+        var element = document.getElementById("demo");
+        document.getElementById("intro").innerHTML = "The text from the demo paragraph :  " + element.innerHTML;
+    </script>
+    
+</body>
+</html>

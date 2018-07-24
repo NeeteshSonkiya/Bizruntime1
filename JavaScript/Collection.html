@@ -1,0 +1,18 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    
+    <title>DOM Collection</title>
+</head>
+<body>
+    <p>This is DOM Collection</p>
+    <p>This is example of collection </p>
+    <p id="id1"></p>
+    <p id="id2"></p>
+    <script>
+        var myCollection = document.getElementsByTagName("p");
+        document.getElementById("id1").innerHTML = myCollection[1].innerHTML;
+        document.getElementById("id2").innerHTML = "the total paragraph of this code is : " + myCollection.length;
+    </script>
+</body>
+</html>

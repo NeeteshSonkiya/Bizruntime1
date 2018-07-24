@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+<body onload="checkCookies()">
+
+    <h1 onclick="this.innerHTML='Ooops!'">Click on this text!</h1>
+    <p>Click the button to display the date.</p>
+
+    <button onclick="displayDate()">The time is?</button><br>
+
+    <script>
+        function displayDate() {
+            document.getElementById("demo").innerHTML = Date();
+        }
+
+        function checkCookies() {
+            var text = "";
+            if (navigator.cookieEnabled == true) {
+                text = "Cookies are enabled.";
+            } else {
+                text = "Cookies are not enabled.";
+            }
+            document.getElementById("demo").innerHTML = text;
+        }
+        function myFunction() {
+            var x = document.getElementById("fname");
+            x.value = x.value.toUpperCase();
+        }
+    </script>
+    <p id="demo"></p>
+    Enter your name: <input type="text" id="fname" onchange="myFunction()"><br>
+    <p>When you leave the input field, a function is triggered which transforms the input text to upper case.</p><br>
+
+
+</body>
+</html>

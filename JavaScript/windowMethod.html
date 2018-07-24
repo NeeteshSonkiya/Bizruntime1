@@ -1,0 +1,34 @@
+﻿
+<html>
+<body>
+
+    <p id="demo"></p>
+
+    <script>
+        var w = window.innerWidth
+            || document.documentElement.clientWidth
+            || document.body.clientWidth;
+
+        var h = window.innerHeight
+            || document.documentElement.clientHeight
+            || document.body.clientHeight;
+
+        var x = document.getElementById("demo");
+        x.innerHTML = "Browser inner window width: " + w + ", height: " + h + ".";
+
+        function openTab() {
+            window.open();
+        }
+        function closeTab() {
+            window.close();
+        }
+        function moveTab() {
+            window.moveTo(1, 2);
+        }
+    </script>
+    <button type="button" onclick="openTab()">NewTab</button>
+    <button type="button" onclick="closeTab()">closeTab</button>
+    <button type="button" onclick="moveTab()">moveTab</button>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Ajax Tutorial</title>
+    <h1>This is Ajax example with json</h1>
+   
+</head>
+<body>
+    Name :  <span id="Name"></span> </br>
+    City :  <span id="City"></span></br>
+    Address :  <span id="Address"></span></br>
+
+    <button type="button" onclick="myAjax()" name="Read">Read</button>
+
+    <script>
+        function myAjax() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4) {
+                    var jsonObj = JSON.parse(xhttp.responseText);
+                    document.getElementById("Name").innerHTML = jsonObj.Name;
+                    document.getElementById("City").innerHTML = jsonObj.City;
+                    document.getElementById("Address").innerHTML = jsonObj.Address;
+                }
+            };
+            xhttp.open("GET", "myJson.json", true);
+            xhttp.send();
+        }
+    </script>
+</body>
+</html>

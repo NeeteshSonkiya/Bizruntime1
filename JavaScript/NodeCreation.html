@@ -1,0 +1,20 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>My Web</title>
+</head>
+<body>
+    <div id="div1">
+        <p id="p1">THis is paragraph</p>
+        <p id="p2">This is  a example of Creating node </p>
+    </div>
+
+    <script>
+        var par = document.createElement("p");
+        var node = document.createTextNode("THis is new node.")
+        par.appendChild(node);
+        var sup = document.getElementById("div1");
+        sup.appendChild(par);
+    </script>
+</body>
+</html>
