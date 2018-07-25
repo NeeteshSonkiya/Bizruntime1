@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <title>JSON EXAMPLE</title>
+ </head>
+ <body>
+ <p id="j3"></p>
+  <script>
+	var myJSON = '{"name":"John", "age":32, "city": "sagar"}';
+	var myObj = JSON.parse(myJSON);
+	document.getElementById("j3").innerHTML = myObj.name;
+	
+  </script>
+ </body>
+</html>

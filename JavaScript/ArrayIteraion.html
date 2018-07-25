@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  
+    <title>Array Iteration</title>
+    <h2>JavaScript Array.forEach()</h2>
+    <p id="demo"></p>
+
+</head>
+<body>
+    <script>
+        var txt = "";
+        var num = [4, 9, 16, 25];
+        num.forEach(myFunction);
+        document.getElementById("demo").innerHTML = txt;
+        function myFunction(value, index, array) {
+            txt = txt + value + "<br>";
+        }
+
+    </script>
+</body>
+</html>

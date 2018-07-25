@@ -1,23 +1,35 @@
 <!doctype html>
 <html lang="en">
  <head>
-  <title>Validation Form</title>
+  <title >Validation Form</title>
+
+  <style>
+  body{
+  background: url("img.jpg");
+ background-size:100%;
+ margin-left:auto;
+ margin-right:auto;
+  }
+  p{
+  color:red;
+  font-size: 20px;
+  font-style: bold;
+   margin-left:auto;
+ margin-right:auto;
+  }
+  </style>
  </head>
  <body>
  <h1 style="text-align:center">Validation Form</h1>
   <form style="text-align:center" name="valForm" onsubmit="return validation()" method="post">
- <p> First Name: <input type="text" size="40" name="firstName"><br></p>
-  <p>Last Name: <input type="text" size="40" name="lastName"><br></p>
-  <p>E-mail : <input type="text" name="email"><br></p>
-  <p>Contact : <input type="text" name="contact"><br></p>
+ <p> First Name: <input type="text" size="50" name="firstName"  placeholder="Neetesh"><br></p>
+  <p>Last Name: <input type="text" size="50" name="lastName" placeholder="Sonkiya"><br></p>
+  <p>E-mail : <input type="text" name="email" placeholder="abc123@gmail.com"><br></p>
+  <p>Contact : <input type="text" name="contact" placeholder="8770234997"</p>
   <p>Address: <textarea cols="65" name="address" placeholder="Address"></textarea><br></p>
   <p>Gender: <input type="radio" name="gender" value="male"> Male
 					  <input type="radio" name="gender" value="female"> Female<br></p>
-	<p>Skills: <input type="checkbox" name="skills" value="C">C
-					<input type="checkbox" name="skills" value="C++">C++
-					<input type="checkbox" name="skills" value="C#">C#
-					<input type="checkbox" name="skills" value="Java">Java
-					<input type="checkbox" name="skills" value="Python">Python <br></p>
+	
 	<p>Qualification : <select type="text" name="edu">
 										<option>select</option>
 										<option>BE</option>
@@ -25,9 +37,12 @@
 										<option>ME</option>
 										<option>M.TECH</option>
 									</select><br></p>
-		<input type="submit" value="submit" name="Submit">
+				<!--<div class="g-recaptcha" data-sitekey="6LesOmYUAAAAACP8QA-nBTRvMdbOyW2vKtwU_7hb"></div>-->
+		<input type="submit" value="submit" onclick="display()"  name="Submit">
+
 			<input type="reset" value="Reset" name="Reset">
-	
+		</p>
+		<p id="id10"></p>
   </form>
   <script>
 
@@ -38,57 +53,66 @@ function validation()
   var email = document.valForm.email.value;
   var contact = document.valForm.contact.value;
   var address = document.valForm.address.value;
-
   var gender = document.valForm.gender.value;
+  var edu = document.valForm.edu.value;
 
 	if (firstName == "" || firstName == null)
 	{
-		alert("Please Enter your FirstName.")
+		window.alert("Please Enter your FirstName.")
 
 		return false;
 	}
-	if (lastName =="")
+	else if (lastName =="")
 	{
 		window.alert("Please Enter your LastName");
 
 		return false;
 	}
-	if (email=="")
+	else if (email=="")
 	{
 		window.alert("Please Enter Your Email ");
 
 		return false;
 	}
-	if (email.indexOf("@", 0) < 0)
+	else if (email.indexOf("@", 0) < 0)
 	{
 		window.alert("Please Enter valid Email");
 
 		return false;
 	}
-	 if (email.indexOf(".", 0) < 0)
+	 else if (email.indexOf(".", 0) < 0)
     {
         window.alert("Please enter a valid e-mail address.");
 
         return false;
     }
-	if (contact == "")
+	else if (contact == "")
     {
         window.alert("Please enter your telephone number.");
 
         return false;
     }
-	if (document.valForm.edu.selectedIndex=="")
-    {
-        alert("Please enter your course.");
 
-        return false;
-    }
-    if (document.valForm.skills.checkbox.unchecked)
-      {
-          alert("Please enter your skills.");
-          return false;
-      }
+	  else
+	{
+		document.write("FirstName : " + firstName + "<br>");
+		document.write("LastName : " + lastName + "<br>");
+		document.write("Email : " + email + "<br>");
+		document.write("Contact : " + contact + "<br>");
+		document.write("Address : " + address + "<br>");
+		document.write("Gender : " + gender + "<br>");
+		document.write("Education : " + edu + "<br>");
+		 localStorage.setItem('FirstName', firstName);
+		 localStorage.setItem('LastName', lastName);
+		 localStorage.setItem('Email', email);
+		 localStorage.setItem('Contact', contact);
+		 localStorage.setItem('Address', address);
+		 localStorage.setItem('Education', edu);
+		//localStorage.removeItem('Email');
+	
+	}
 }
 </script>
+<!--<script src='https://www.google.com/recaptcha/api.js'></script>-->
  </body>
 </html>

@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <title>Storing Data</title>
+ </head>
+ <body>
+  <p id="j4"></p>
+  <script>
+		var myObj, myJson, text, obj;
+		//storing data
+		myObj = {"name":"Johny", "age":34, "city":"New york"};
+		myJson = JSON.stringify(myObj);
+		localStorage.setItem("testJSON", myJson);
+
+		//retrieving data
+		text = localStorage.getItem("testJSON");
+		obj = JSON.parse(text);
+		document.getElementById("j4").innerHTML = obj.name;
+  </script>
+ </body>
+</html>

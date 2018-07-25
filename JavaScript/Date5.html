@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>DateObject</title>
+    <h1>Using startOfMonth</h1>
+</head>
+<body>
+    <script>
+        function startOfMonth(date) {
+
+            return new Date(date.getFullYear(), date.getMonth() + 1, 0);
+
+        }
+
+        dt = new Date();
+
+        document.write(startOfMonth(dt).toString());
+    </script>
+</body>
+</html>

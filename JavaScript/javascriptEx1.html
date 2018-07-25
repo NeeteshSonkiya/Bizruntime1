@@ -1,22 +1,16 @@
-<!DOCTYPE html>
 <html>
 <body>
+  <p>Creating a javascript Object</p>
 
-<h2>JavaScript Errors</h2>
-<p>In this example we have written "alert" as "adddlert" to deliberately produce an error.</p>
-<p>The name property of the Error object returns the name of the error and the message property returns a description of the error:</p>
+  <p id="demo"></p>
+  <script>
+var person = new Object();
+person.firstName = "johny";
+person.lastName = "deep";
+person.age = 50;
+person.salary = 32011;
 
-<p id="demo" style="color:red"></p>
+document.getElementById("demo").innerHTML = person.firstName + " " + person.lastName;
 
-<script>
-try {
-    adddlert("Welcome guest!");
-}
-catch(err) {
-    document.getElementById("demo").innerHTML = 
-    err.name + "<br>" + err.message;
-}
-</script>
-
-</body>
+  </script>
 </html>

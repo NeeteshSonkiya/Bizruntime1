@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>JavaScript Regular expression to valid an email address</title>
+</head>
+<body>
+    <input type="text" id="demo"><br>
+    <button type="button" name="submit" onclick="valid_email()" value="submit">Submit</button>
+    <script>
+        function valid_email() {
+            var x = document.getElementById("demo").value;
+            var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+            if (mailformat.test(x)) {
+                document.write("Valid email address!");
+            }
+            else {
+                document.write("You have entered an invalid email address!");
+            }
+        }
+       
+        
+
+    </script>
+</body>
+</html>

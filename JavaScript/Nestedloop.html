@@ -13,8 +13,8 @@
 		innerloop:
 		for(var j = 0; i<10; i++)
 		{
-			if (i == j) continue outer;
-			if (i > j ) continue inner;
+			if (i == j) continue outerloop;
+			if (i > j ) continue innerloop;
 			if (i > 5) break;
 			document.write("inner loop" + j);
 		}

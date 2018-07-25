@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>DateObject</title>
+    <h2>JavaScript DateObject</h2>
+</head>
+<body>
+    <script>
+        function timezone_offset_in_seconds(dt) {
+            return -dt.getTimezoneOffset() * 60;
+        }
+
+        dt = new Date();
+        document.write(timezone_offset_in_seconds(dt));
+
+        dt = new Date(1989, 10, 1);
+        document.write(timezone_offset_in_seconds(dt));
+
+    </script>
+</body>
+</html>

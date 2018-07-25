@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <title>Nested Json Object</title>
+ </head>
+ <body>
+ <p id="d1"></p><br>
+ <p id="d2"></p><br>
+ <p id="d3"></p><br>
+
+  <script>
+	myObj = {
+    "name":"John",
+    "age":30,
+    "cars": {
+        "car1":"Ford",
+        "car2":"BMW",
+        "car3":"Fiat"
+    }
+ }
+ var x = myObj.cars.car2;
+ document.getElementById("d1").innerHTML = x;
+ x = myObj.cars["car2"];
+ document.getElementById("d2").innerHTML = x;
+myObj.cars["cars2"]="Mercedes";
+ x = myObj.cars["cars2"];
+ document.getElementById("d3").innerHTML = x;
+ delete myObj.cars["cars3"];
+
+  </script>
+ </body>
+</html>
