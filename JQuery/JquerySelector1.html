@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>JQuery Tutorial</title>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+
+    <h1>Example of JQuery using selector</h1>
+
+    <p>The jQuery team knows all about cross-browser issues, and they have written this knowledge into the jQuery library. jQuery will run exactly the same in all major browsers.</p>
+    <p>
+        If you don't want to download and host jQuery yourself, you can include it from a CDN (Content Delivery Network).
+
+        Both Google and Microsoft host jQuery.
+    </p>
+    <p>jQuery takes a lot of common tasks that require many lines of JavaScript code to accomplish, and wraps them into methods that you can call with a single line of code.</p>
+    <p>jQuery also simplifies a lot of the complicated things from JavaScript, like AJAX calls and DOM manipulation.</p>
+</head>
+<body>
+    <script>
+        $(document).ready(function () {
+            $("#btn").click(function () {
+                $("*").toggle(10000);
+            });
+        });
+    </script>
+    <button id="btn">Toggle</button>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+    <title>RxJS tutorial</title>
+    <script src="https://unpkg.com/@reactivex/rxjs@5.3.0/dist/global/Rx.js"></script>
+</head>
+<body>
+  <button>ClickME</button>  
+</body>
+</html>
+<script>
+   var button = document.querySelector('button');
+
+   var observer = {
+       next: function (value) {
+           console.log(value);
+       },
+       error: function (value) {
+           console.log(error);
+       },
+       complete: function (value) {
+           console.log('completed');
+       }
+   };
+   
+   Rx.Observable.fromEvent(button, 'click')
+       .subscribe(observer);
+</script>

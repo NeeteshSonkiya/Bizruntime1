@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>JQuery Tutorial</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <h1>Example of mouse event</h1>
+    <p>The jQuery team knows all about cross-browser issues, and they have written this knowledge into the jQuery library. jQuery will run exactly the same in all major browsers.</p>
+    <p>
+        If you don't want to download and host jQuery yourself, you can include it from a CDN (Content Delivery Network).
+
+        Both Google and Microsoft host jQuery.
+    </p>
+    <p>
+        If you don't want to download and host jQuery yourself, you can include it from a CDN (Content Delivery Network).
+
+        Both Google and Microsoft host jQuery.
+    </p>
+    <p>
+        If you don't want to download and host jQuery yourself, you can include it from a CDN (Content Delivery Network).
+
+        Both Google and Microsoft host jQuery.
+    </p>
+</head>
+<body>
+    <script>
+        $(document).ready(function () {
+            $("input").focus(function () {
+                $(this).css("background-color", "gray");
+            });
+            $("input").blur(function () {
+                $(this).css("background-color", "white");
+            });
+        });
+    </script>
+   
+        <script>
+            function validateform() {
+                var name = document.myform.name.value;
+                var password = document.myform.password.value;
+
+                if (name == null || name == "") {
+                    alert("Name can't be blank");
+                    return false;
+                } else if (password.length < 6) {
+                    alert("Password must be at least 6 characters long.");
+                    return false;
+                }
+            }
+        </script>
+  
+            <form name="myform" method="post" action="valid.jsp" onsubmit="return validateform()">
+                Name: <input type="text" name="name"><br />
+                Password: <input type="password" name="password"><br />
+                <input type="submit" value="register">
+            </form>
+        </body>
+</html>

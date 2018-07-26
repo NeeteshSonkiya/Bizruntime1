@@ -1,0 +1,20 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>This is the example of JQuery </title>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+    <h1>Example of Jquery using id selector</h1>
+    <p id="test">jQuery takes a lot of common tasks that require many lines of JavaScript code to accomplish, and wraps them into methods that you can call with a single line of code.</p>
+    <p>jQuery also simplifies a lot of the complicated things from JavaScript, like AJAX calls and DOM manipulation.</p>
+</head>
+<body>
+    <script>
+        $(document).ready(function () {
+            $("button").click(function () {
+                $("#test").hide()
+            });
+        });
+    </script>
+    <button>Click to hide 'id' Paragraph</button>
+</body>
+</html>

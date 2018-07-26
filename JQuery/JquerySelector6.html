@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+</head>
+<body>
+
+    <h1>Welcome to My Web Page</h1>
+
+    <table border="1">
+        <tr>
+            <th>Company</th>
+            <th>Country</th>
+        </tr>
+        <tr>
+            <td>Bizruntime</td>
+            <td>bangalore</td>
+        </tr>
+        <tr>
+            <td>Iolite</td>
+            <td>kerala</td>
+        </tr>
+        <tr>
+            <td>ModeFinServer</td>
+            <td>bangalore</td>
+        </tr>
+        <tr>
+            <td>Infosys</td>
+            <td>India</td>
+        </tr>
+        <tr>
+            <td>PeopleWorld</td>
+            <td>Pune</td>
+        </tr>
+    </table>
+    <script>
+        $(document).ready(function () {
+            $("tr:even").css("background-color", "red");
+        });
+        $(document).ready(function () {
+            $("tr:odd").css("background-color", "gray");
+        });
+    </script>
+</body>
+</html>
