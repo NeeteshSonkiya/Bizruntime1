@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JQuery Tutorial</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <h1>Example of Jquery</h1>
+    <p>The jQuery team knows all about cross-browser issues, and they have written this knowledge into the jQuery library. jQuery
+        will run exactly the same in all major browsers.</p>
+    <p>
+        If you don't want to download and host jQuery yourself, you can include it from a CDN (Content Delivery Network). Both Google
+        and Microsoft host jQuery.
+    </p>
+    <p>
+        If you don't want to download and host jQuery yourself, you can include it from a CDN (Content Delivery Network). Both Google
+        and Microsoft host jQuery.
+    </p>
+    <p>
+        If you don't want to download and host jQuery yourself, you can include it from a CDN (Content Delivery Network). Both Google
+        and Microsoft host jQuery.
+    </p>
+    <button>Start Animation</button>
+    <style>
+        #flip {
+            background-image: url(img.jpg);
+            height: 50px;
+            width: 100px;
+            text-align: center;
+            position: absolute;
+
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            $("button").click(function () {
+                var div = $("#flip");
+                div.animate({ left: '500px', height: '300px', width: '500px'}, "slow");
+                div.animate({fontSize: '6em'}, "slow");
+                div.animate({right: '200px', height:'00px', width: '00px'},"hide");
+                div.animate({fontSize: '0em'}, "hide");
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+
+    <div id="flip">Welcome!</div>
+    <br>
+
+
+
+</body>
+
+</html>

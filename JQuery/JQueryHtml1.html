@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JQuery Tutorial</title>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+
+    <h1>Example of JQuery using selector</h1>
+    <p id="id"></p>
+    <p id="id1"></p>
+    <p id="p1"><b>jQuery</b> also simplifies a lot of the complicated things from JavaScript, like AJAX calls and DOM manipulation.</p>
+    <p><Input type="text" id="test" Tom And Jerry></Input></p>
+</head>
+<body>
+    <script>
+       $(document).ready(function(){
+           $("#btn").click(function(){
+            document.getElementById("id2").innerHTML =($("#test").val());
+           });
+           $("#btn1").click(function(){
+               document.getElementById("id").innerHTML =($("#p1").text());
+           });
+           $("#btn2").click(function(){
+               document.getElementById("id1").innerHTML =($("#p1").html());
+           });
+           $("#btn0").click(function(){
+            document.getElementById("id2").innerHTML =($("#test").val("Welcome to cyber world"));
+           });
+           $("#btn01").click(function(){
+               document.getElementById("id").innerHTML =($("#p1").text("Welcome your text is changed!"));
+           });
+           $("#btn02").click(function(){
+               document.getElementById("id1").innerHTML =($("#p1").html("<b>Weolcome To India</b>"));
+           });
+       });
+    </script>
+    <button id="btn">get value</button>
+    <button id="btn1">get text</button>
+    <button id="btn2">get html</button><br>
+    <button id="btn0">set value</button>
+    <button id="btn01">set text</button>
+    <button id="btn02">set html</button><br>
+    <p id="id2"></p>
+</body>
+</html>
