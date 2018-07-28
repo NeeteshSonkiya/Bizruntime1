@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>RxJS tutorial</title>
+    <script src="https://unpkg.com/@reactivex/rxjs@5.3.0/dist/global/Rx.js"></script>
+    <p>The jQuery team knows all about cross-browser issues, and they have written this knowledge into the jQuery library. jQuery
+        will run exactly the same in all major browsers.</p>
+    <p>
+        If you don't want to download and host jQuery yourself, you can include it from a CDN (Content Delivery Network). Both Google
+        and Microsoft host jQuery.
+    </p>
+    <p>
+        If you don't want to download and host jQuery yourself, you can include it from a CDN (Content Delivery Network). Both Google
+        and Microsoft host jQuery.
+    </p>
+    <p>
+        19. Subject - An Observable that talks to subscribers
+An RxJS Subject is just an Observable with the ability to call next() on itself to emit new values - in other words, it is an event emitter.
+    </p>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+   var subject = new Rx.Subject()
+
+   var subA = subject.subscribe(val => document.write(`<br>Sub A: ${val}`))
+   var subB = subject.subscribe(val => document.write(`<br>Sub B: ${val}`))
+
+   subject.next('welcome')
+
+   setTimeout(() => {
+       subject.next('To India')
+   }, 2000)
+</script>

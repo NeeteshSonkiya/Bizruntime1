@@ -18,7 +18,7 @@ namespace log4netAndNunitTest
         }
 
         [Test]
-        public void Divide1()
+        public void NDivide()
         {
             Log4netEx p = new Log4netEx();
             int i = 10, j = 0, c, k;

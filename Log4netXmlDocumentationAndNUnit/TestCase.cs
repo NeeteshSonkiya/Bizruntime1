@@ -18,6 +18,13 @@ namespace log4netAndNunitTest
                 int result = helper.add(20, 10);
                 Assert.AreEqual(30, result);
             }
+            [TestCase]
+            public void NAddTest()
+            {
+                MathsHelper helper = new MathsHelper();
+                int result = helper.add(20, 10);
+                Assert.AreEqual(32, result);
+            }
 
             [TestCase]
             public void SubtractTest()
@@ -25,6 +32,13 @@ namespace log4netAndNunitTest
                 MathsHelper helper = new MathsHelper();
                 int result = helper.sub(20, 10);
                 Assert.AreEqual(10, result);
+            }
+            [TestCase]
+            public void NSubtractTest()
+            {
+                MathsHelper helper = new MathsHelper();
+                int result = helper.sub(20, 10);
+                Assert.AreEqual(14, result);
             }
         }
     }

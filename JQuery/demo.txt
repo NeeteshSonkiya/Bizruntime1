@@ -1,0 +1,5 @@
+The required URL parameter specifies the URL you wish to request.
+
+The optional callback parameter is the name of a function to be executed if the request succeeds.
+
+The following example uses the $.get() method to retrieve data from a file on the server:

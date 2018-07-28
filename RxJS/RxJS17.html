@@ -15,15 +15,13 @@
         Both Google and Microsoft host jQuery.
     </p>
     <p>
-        If you don't want to download and host jQuery yourself, you can include it from a CDN (Content Delivery Network).
-
-        Both Google and Microsoft host jQuery.
-    </p>
-    <p>
-        If you don't want to download and host jQuery yourself, you can include it from a CDN (Content Delivery Network).
-
-        Both Google and Microsoft host jQuery.
-    </p>
+        4. Hot vs Cold Observables
+        This is somewhat confusing topic that should be really simple. Check out Ben Lesh’s post on Hot vs. Cold Observables on Medium
+        
+        Cold Observables start emitting or creating values only when the subscription starts, like a typical YouTube video. Each subscriber will see the same sequence (or pattern) of events from start to finish.
+        Hot Observables are always being updated with new values, like a live stream on YouTube. When you subscribe you start with the most recent value and only see future changes.
+        Cold Observable Example
+        We know an Observable is cold if we subscribe at the same time, but get a different value.</p>
 </body>
 </html>
 <script>

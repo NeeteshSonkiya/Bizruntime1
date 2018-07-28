@@ -20,10 +20,12 @@
         Both Google and Microsoft host jQuery.
     </p>
     <p>
-        If you don't want to download and host jQuery yourself, you can include it from a CDN (Content Delivery Network).
-
-        Both Google and Microsoft host jQuery.
-    </p>
+        3. Unsubscribe - Turn off the stream
+        When an Observable is done, it emits a complete notification.
+        
+        You need to know when your Observable completes, otherwise your streams might flood the available memory in your app. If you have a continuous stream, you need to shut it off at some point.
+        
+        Some observables complete automatically, so there is no need to unsubscribe (but it doesn’t hurt if you do). You can find out if an observable is complete by calling finally(). For example at timer.</p>
 </body>
 </html>
 <script>

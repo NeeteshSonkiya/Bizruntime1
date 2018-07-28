@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>RxJS tutorial</title>
+    <script src="https://unpkg.com/@reactivex/rxjs@5.3.0/dist/global/Rx.js"></script>
+    <p>The jQuery team knows all about cross-browser issues, and they have written this knowledge into the jQuery library. jQuery
+        will run exactly the same in all major browsers.</p>
+    <p>
+        If you don't want to download and host jQuery yourself, you can include it from a CDN (Content Delivery Network). Both Google
+        and Microsoft host jQuery.
+    </p>
+    <p>
+        If you don't want to download and host jQuery yourself, you can include it from a CDN (Content Delivery Network). Both Google
+        and Microsoft host jQuery.
+    </p>
+    <p>
+        18. Retry - Never give up
+        Let’s say we get an error from an API on the initial request - it might just be a fluke. Let’s give it a couple more tries before we give up and complete the Observable.
+        
+        The basic retry() operator will try right away as many times as you want.
+    </p>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+  var observable = Rx.Observable.create( observer => {
+      observer.next('good')
+      observer.next('great')
+      observer.next('grand')
+
+      throw 'catch me!'
+      observer.next('wonderful')
+  })
+
+observable
+    .catch(err => document.write(`Error caught: ${err}`))
+    .retry(2)
+    .subscribe(val => document.write(val + "<br>"))
+</script>

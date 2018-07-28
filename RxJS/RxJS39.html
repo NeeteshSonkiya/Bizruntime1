@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>RxJS tutorial</title>
+    <script src="https://unpkg.com/@reactivex/rxjs@5.3.0/dist/global/Rx.js"></script>
+    <p>The jQuery team knows all about cross-browser issues, and they have written this knowledge into the jQuery library. jQuery
+        will run exactly the same in all major browsers.</p>
+    <p>
+        If you don't want to download and host jQuery yourself, you can include it from a CDN (Content Delivery Network). Both Google
+        and Microsoft host jQuery.
+    </p>
+    <p>
+        If you don't want to download and host jQuery yourself, you can include it from a CDN (Content Delivery Network). Both Google
+        and Microsoft host jQuery.
+    </p>
+
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+
+    var observable = Rx.Observable.create(function (observer) {
+        observer.next(1);
+        observer.next(2);
+        observer.next(3);
+        observer.complete();
+    })
+        .observeOn(Rx.Scheduler.async);
+
+    console.log('just before subscribe');
+    observable.subscribe({
+        next: x => console.log('got value ' + x),
+        error: err => console.error('something wrong occurred: ' + err),
+        complete: () => console.log('done'),
+    });
+    console.log('just after subscribe');
+</script>

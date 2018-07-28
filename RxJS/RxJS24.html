@@ -13,8 +13,11 @@
     <p>The jQuery team knows all about cross-browser issues, and they have written this knowledge into the jQuery library. jQuery
         will run exactly the same in all major browsers.</p>
     <p>
-        If you don't want to download and host jQuery yourself, you can include it from a CDN (Content Delivery Network). Both Google
-        and Microsoft host jQuery.
+        9. Debounce and Throttle - Handle Stream Overload
+        Sometimes you might be dealing with a stream that that is emitting values crazy fast - such as mouse move events in the browser. You might only want to handle these events every so often.
+        
+        Throttle - Give me the first value, then wait X time.
+        Debounce - Wait X time, then give me the last value.
     </p>
 
 </body>
@@ -25,13 +28,13 @@
 
 mouseEvents
   .throttleTime(1000)
-  .subscribe(n => document.write(n))
+  .subscribe(n => console.log(n))
 // MouseEvent<data>
 // wait 1 second...
 
 
 mouseEvents
-  .debounceTime(10000)
-  .subscribe(n => document.write(n))
+  .debounceTime(2000)
+  .subscribe(n => console.log(n))
       
 </script>

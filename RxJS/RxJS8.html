@@ -14,9 +14,11 @@
     observer.next(1);
     observer.next(2);
     observer.next(3);
+   // observer.error("some error occur....");
     setTimeout(() => {
         observer.next(4);
         observer.complete();
+        
       }, 1000);
    });
 

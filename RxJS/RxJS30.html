@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>RxJS tutorial</title>
+    <script src="https://unpkg.com/@reactivex/rxjs@5.3.0/dist/global/Rx.js"></script>
+    <p>The jQuery team knows all about cross-browser issues, and they have written this knowledge into the jQuery library. jQuery
+        will run exactly the same in all major browsers.</p>
+    <p>
+        If you don't want to download and host jQuery yourself, you can include it from a CDN (Content Delivery Network). Both Google
+        and Microsoft host jQuery.
+    </p>
+    <p>
+        If you don't want to download and host jQuery yourself, you can include it from a CDN (Content Delivery Network). Both Google
+        and Microsoft host jQuery.
+    </p>
+    <p>
+        14. Buffer - Collect values, then emit as Array
+Buffer is similar to debounce and throttle, but rather than filtering out data, it accumulates it into an array, then emits the array. There are many ways to buffer, but here we are going to use bufferTime() and bufferCount(), to buffer based on time or quantity.
+    </p>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    var mouseEvents = Rx.Observable.fromEvent(document, 'mousemove')
+
+    mouseEvents
+     .map(e => e.timeStamp.toFixed(0))
+     .bufferTime(1000)
+     .subscribe(batch => console.log(batch))
+
+     mouseEvents
+      .bufferCount(5)
+      .subscribe(batch => console.log(batch))
+</script>

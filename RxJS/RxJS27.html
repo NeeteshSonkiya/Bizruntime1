@@ -3,11 +3,8 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page Title</title>
+    <title>RxJS tutorial</title>
     <script src="https://unpkg.com/@reactivex/rxjs@5.3.0/dist/global/Rx.js"></script>
-</head>
-<body>
-    <h1>Example of mouse event</h1>
     <p>The jQuery team knows all about cross-browser issues, and they have written this knowledge into the jQuery library. jQuery will run exactly the same in all major browsers.</p>
     <p>
         If you don't want to download and host jQuery yourself, you can include it from a CDN (Content Delivery Network).
@@ -20,19 +17,20 @@
         Both Google and Microsoft host jQuery.
     </p>
     <p>
-        But how do we make an already cold observable hot? We can make a cold Observable hot by simply calling publish() on it. This will allow the subscribers to share the same values in realtime. To make it start emitting values, you call connect() after the subscription has started.
+        12. TakeUntil - Get values until you’re told not to
+        As I mentioned in section 3, you need to unsubscribe for data responsibily. A clever way to handle subscriptions is with takeUntil(), which will complete the Observable when a second notifier Observable emits a value.
     </p>
+</head>
+<body>
+    
 </body>
 </html>
 <script>
-   var cold = Rx.Observable.create( (observer) => {
-       observer.next(Math.random() )
-   })
+    var interval = Rx.Observable.interval(500)
+    var notifier = Rx.Observable.timer(2000)
 
-   var hot = cold.publish()
-
-   hot.subscribe(a => console.log(`Subscriber A: ${a}`))
-   hot.subscribe(b => console.log(`Subscriber B: ${b}`))
-
-   hot.connect()
+    interval
+     .takeUntil(notifier)
+     .finally(()=> console.log('Complete!'))
+     .subscribe(i => console.log(i))
 </script>

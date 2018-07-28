@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("#btn1").click(function(){
+        $("#p1").prepend("<b>PrePend Text</b>");
+    });
+    $("#btn2").click(function(){
+        $("#p2").append("<b>Appended Text</b>");
+    });
+    $("#btn1").click(function(){
+        $("img").before("<b>Before Click</b>");
+    });
+    $("#btn2").click(function(){
+        $("img").after("<b>After Image</b>");
+    });
+});
+</script>
+<style>
+.blue {
+    color: blue;
+}
+</style>
+</head>
+<body>
+
+<h1>Heading 1</h1>
+<h2>Heading 2</h2>
+
+<p id="p1">This is a paragraph.</p>
+<p id="p2">This is another paragraph.</p>
+<img src="img3.jpg" /><br>
+
+<button id="btn1">before</button>
+<button id="btn2">after</button>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+   $("#btn1").click(function(){
+       $("#d1").remove();
+   });
+   $("#btn2").click(function(){
+       $("#div1").empty();
+   });
+});
+</script>
+<style>
+#d1{
+    background-color: rgb(37, 122, 104);
+    padding: 5px;
+    border: solid 5px rgb(5, 5, 5);
+    width: 500px;
+    height: 150px;
+    font-size: 5em;
+}
+#d2{
+    background-color:rgb(126, 241, 197);
+    padding: 5px;
+    border: solid 2px rgb(96, 28, 223);
+    width: 500px;
+    height: 150px;
+    align: right 400px;
+    font-size: 3em;
+}
+
+</style>
+</head>
+<body>
+
+<h1>Heading 1</h1>
+<h2>Heading 2</h2>
+
+<p id="p1">This is a paragraph.</p>
+<p id="p2">This is another paragraph.</p>
+<div id="d1">Hello  guys!</div>
+<div id="d2">Welcome to My World!</div>
+<div id="div1" style="height:100px;width:300px;border:1px solid black;background-color:yellow;">
+This is some text in the div.
+<p>This is a paragraph in the div.</p>
+<p>This is another paragraph in the div.</p>
+
+</div>
+
+<button id="btn1">before</button>
+<button id="btn2">after</button>
+</body>
+</html>

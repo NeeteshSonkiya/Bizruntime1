@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.ancestors * { 
+    display: block;
+    border: 2px solid lightgrey;
+    color: lightgrey;
+    padding: 5px;
+    margin: 15px;
+}
+#btn{
+margin-left: auto;
+margin-right: auto;
+}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("#btn").click(function(){
+        $("span").parentsUntil("div").css({"color": "red", "border": "2px solid black"});
+        $("span").parents("ul").css({"color": "red", "border": "3px solid green"});
+        $("span").parent("li").css({"color": "red", "border": "3px solid blue"});
+    });
+});
+</script>
+</head>
+
+<body class="ancestors"> body (great-great-grandparent)
+  <div style="width:500px;">div (great-grandparent)
+    <ul>ul (grandparent)  
+      <li>li (direct parent)
+        <span><button id="btn">span</button></span>
+      </li>
+    </ul>   
+  </div>
+</body>
+
+</html>
