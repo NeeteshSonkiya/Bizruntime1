@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>RxJS tutorial</title>
+    <script src="https://unpkg.com/@reactivex/rxjs@5.3.0/dist/global/Rx.js"></script>
+    <p>The jQuery team knows all about cross-browser issues, and they have written this knowledge into the jQuery library. jQuery
+        will run exactly the same in all major browsers.</p>
+    <p>
+        If you don't want to download and host jQuery yourself, you can include it from a CDN (Content Delivery Network). Both Google
+        and Microsoft host jQuery.
+    </p>
+    <p>
+        An Operator is a function which creates a new Observable based on the current Observable. This is a pure operation: the previous Observable stays unmodified.
+    </p>
+
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+ var clicks = Rx.Observable.fromEvent(document, 'click');
+var pairs = clicks.pairwise();
+var distance = pairs.map(pair => {
+  var x0 = pair[0].clientX;
+  var y0 = pair[0].clientY;
+  var x1 = pair[1].clientX;
+  var y1 = pair[1].clientY;
+  return Math.sqrt(Math.pow(x0 - x1, 2) + Math.pow(y0 - y1, 2));
+});
+distance.subscribe(x => console.log(x));
+</script>

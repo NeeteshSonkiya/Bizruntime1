@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>RxJS tutorial</title>
+    <script src="https://unpkg.com/@reactivex/rxjs@5.3.0/dist/global/Rx.js"></script>
+    <p>The jQuery team knows all about cross-browser issues, and they have written this knowledge into the jQuery library. jQuery
+        will run exactly the same in all major browsers.</p>
+    <p>
+        If you don't want to download and host jQuery yourself, you can include it from a CDN (Content Delivery Network). Both Google
+        and Microsoft host jQuery.
+    </p>
+    <p>
+            
+    </p>
+
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    //var clicks = Rx.Observable.fromEvent(document, 'click');
+    //var tagNames = clicks.pluck('target', 'tagName');
+    //tagNames.subscribe(x => console.log(x));
+
+//    var clicks = Rx.Observable.fromEvent(document, 'click');
+//var ones = clicks.mapTo(1);
+//var seed = 0;
+//var count = ones.scan((acc, one) => acc + one, seed);
+//count.subscribe(x => console.log(x));
+
+var clicks = Rx.Observable.fromEvent(document, 'click');
+var result = clicks.switchMapTo(Rx.Observable.interval(1000));
+result.subscribe(x => console.log(x));
+</script>

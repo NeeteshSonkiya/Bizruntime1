@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>RxJS tutorial</title>
+    <script src="https://unpkg.com/@reactivex/rxjs@5.3.0/dist/global/Rx.js"></script>
+    <p>The jQuery team knows all about cross-browser issues, and they have written this knowledge into the jQuery library. jQuery
+        will run exactly the same in all major browsers.</p>
+    <p>
+        If you don't want to download and host jQuery yourself, you can include it from a CDN (Content Delivery Network). Both Google
+        and Microsoft host jQuery.
+    </p>
+    <p>
+
+    </p>
+
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    const sumObserver = {
+        sum: 0,
+        next(value) {
+            console.log('Adding: ' + value);
+            this.sum = this.sum + value;
+        },
+        error() { // We actually could just remove this method,
+        },        // since we do not really care about errors right now.
+        complete() {
+            console.log('Sum equals: ' + this.sum);
+        }
+    };
+
+    Rx.Observable.of(1, 2, 3) // Synchronously emits 1, 2, 3 and then completes.
+        .subscribe(sumObserver);
+</script>
