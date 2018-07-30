@@ -11,8 +11,6 @@ namespace Client
 {
     public class Client9
     {
-        static log4net.ILog log = log4net.LogManager.GetLogger(typeof(Client10));
-
         static int ServerPort = 1234;
         static Socket sck;
         static string name = "";
@@ -31,7 +29,7 @@ namespace Client
                 }
                 catch (Exception e)
                 {
-                    log.Error(e);
+                    Console.WriteLine(e);
                 }
             }
         }
@@ -55,7 +53,7 @@ namespace Client
                 catch (Exception e)
                 {
 
-                    log.Error(e);
+                    Console.WriteLine(e);
                 }
             }
         }
@@ -75,7 +73,7 @@ namespace Client
             }
             catch (Exception ex)
             {
-                log.Error(ex.Message);
+                Console.WriteLine(ex.Message);
             }
 
             byte[] send = Encoding.Default.GetBytes(name);
@@ -85,7 +83,7 @@ namespace Client
             Array.Resize(ref Buf, rec);
             string dis = Encoding.Default.GetString(Buf);
             Console.WriteLine(dis + " Connected.....");
-            Console.Write("Enter Message U want To Connect :");
+            Console.Write("Enter Name U want To Connect '|':");
             string conn = Console.ReadLine();
             send = Encoding.Default.GetBytes(conn);
             sck.Send(send, 0, send.Length, 0);
@@ -94,7 +92,6 @@ namespace Client
 
         static void Main(string[] args)
         {
-            log4net.Config.BasicConfigurator.Configure();
             try
             {
                 Connection();
@@ -105,7 +102,7 @@ namespace Client
                 readMessage.Start();
             }
             catch (Exception ex)
-            { log.Error(ex.Message); }
+            { Console.WriteLine(ex.Message); }
         }
     }
 }

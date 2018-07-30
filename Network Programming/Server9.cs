@@ -6,13 +6,14 @@ using System.Net.Sockets;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using log4net;
 
 namespace Server
 {
+
+
     public class Server9
     {
-        // static log4net.ILog log = log4net.LogManager.GetLogger(typeof(Server10));
+
 
         static Dictionary<string, ClientHandler> dSockets = new Dictionary<string, ClientHandler>();
         static int i = 1;
@@ -58,7 +59,6 @@ namespace Server
                 }
                 catch
                 {
-                    // log.Error("Hello");
                     Console.WriteLine("Hello");
                 }
             }
@@ -66,7 +66,7 @@ namespace Server
 
         static void Main(string[] args)
         {
-            log4net.Config.BasicConfigurator.Configure();
+
             Console.WriteLine("WelCome To Chat Server");
             Connection();
             Operation();
@@ -74,132 +74,118 @@ namespace Server
         }
 
     }
-    class ClientHandler
-    {
 
 
-        private string name;
-        Socket s;
-        bool isloggedin;
-        string[] strr;
-        string a;
-        static ClientHandler kk;
-        Dictionary<string, ClientHandler> dSockets;
 
-
-        public ClientHandler(Socket s, string name, string con, Dictionary<string, ClientHandler> ch)
+   
+        class ClientHandler
         {
 
-            this.name = name;
-            this.s = s;
-            this.isloggedin = true;
-            dSockets = ch;
-            //this.strr = con.Split('|');
-            this.a = con;
-        }
+            private string name;
+            Socket s;
+            bool isloggedin;
+            string[] strr;
+            static ClientHandler kk;
+            Dictionary<string, ClientHandler> dSockets;
 
-        public void Run()
-        {
-            string received;
-            while (true)
+
+            public ClientHandler(Socket s, string name, string con, Dictionary<string, ClientHandler> ch)
             {
-                try
-                {
-                    byte[] Buffer = new byte[255];
-                    int rec = s.Receive(Buffer, 0, Buffer.Length, 0);
-                    Array.Resize(ref Buffer, rec);
-                    received = Encoding.Default.GetString(Buffer);
 
-                    Console.WriteLine(received);
-                    string[] st = received.Split('#');
-                    string recipient = st[0];
-                    string MsgToSend = st[1];
-
-                    if (MsgToSend.Equals("logout"))
-                    {
-                        dSockets.Remove(recipient);
-                        this.isloggedin = false;
-                        this.s.Close();
-                        break;
-                    }
-
-
-
-                    if ((a.ToUpper()).Equals("ALL"))
-                    {
-                        foreach (KeyValuePair<string, ClientHandler> val in dSockets)
-                        {
-                            ClientHandler mc = (ClientHandler)val.Value;
-
-
-                            if (mc.isloggedin == true)
-                            {
-                                byte[] sData = Encoding.Default.GetBytes(this.name + " : " + MsgToSend);
-                                mc.s.Send(sData, 0, sData.Length, 0);
-                            }
-
-                        }
-                    }
-                    else if ((a.ToUpper()).Equals("NONE")) { }
-                    else if ((a.ToUpper()).Equals("SELF"))
-                    {
-
-                        foreach (KeyValuePair<string, ClientHandler> val in dSockets)
-                        {
-                            ClientHandler mc = (ClientHandler)val.Value;
-
-
-                            if ((mc.name.Equals(recipient)) && mc.isloggedin == true)
-                            {
-                                byte[] sData = Encoding.Default.GetBytes(this.name + " : " + MsgToSend);
-                                mc.s.Send(sData, 0, sData.Length, 0);
-                            }
-
-                        }
-
-                    }
-                    else if ((a.ToUpper()).Equals("EXCEPTME"))
-                    {
-
-                        foreach (KeyValuePair<string, ClientHandler> val in dSockets)
-                        {
-                            ClientHandler mc = (ClientHandler)val.Value;
-
-
-                            if (!(mc.name.Equals(recipient)) && mc.isloggedin == true)
-                            {
-                                byte[] sData = Encoding.Default.GetBytes(this.name + " : " + MsgToSend);
-                                mc.s.Send(sData, 0, sData.Length, 0);
-                            }
-
-                        }
-                    }
-
-
-                }
-                catch (Exception e)
-                {
-
-                    Console.WriteLine(e.Message);
-                }
+                this.name = name;
+                this.s = s;
+                this.isloggedin = true;
+                dSockets = ch;
+                this.strr = con.Split('|');
             }
-        }
 
-        public void Send()
-        {
-            if (s != null)
+            public void Run()
             {
+                string received;
                 while (true)
                 {
-                    string msg = Console.ReadLine();
-                    foreach (KeyValuePair<string, ClientHandler> val in dSockets)
+                    try
                     {
-                        ClientHandler mc = (ClientHandler)val.Value;
-                        byte[] sData = Encoding.Default.GetBytes("Server : " + msg);
-                        mc.s.Send(sData, 0, sData.Length, 0);
+                        byte[] Buffer = new byte[255];
+                        int rec = s.Receive(Buffer, 0, Buffer.Length, 0);
+                        Array.Resize(ref Buffer, rec);
+                        received = Encoding.Default.GetString(Buffer);
+
+                        Console.WriteLine(received);
+                        string[] st = received.Split('#');
+                        string recipient = st[0];
+                        string MsgToSend = st[1];
+
+                        if (MsgToSend.Equals("logout"))
+                        {
+                            dSockets.Remove(recipient);
+                            this.isloggedin = false;
+                            this.s.Close();
+                            break;
+                        }
+
+                        if (strr[0].Equals(" "))
+                        {
+                            foreach (KeyValuePair<string, ClientHandler> val in dSockets)
+                            {
+                                ClientHandler mc = (ClientHandler)val.Value;
+
+
+                                if (!(mc.name.Equals(recipient)) && mc.isloggedin == true)
+                                {
+                                    byte[] sData = Encoding.Default.GetBytes(this.name + " : " + MsgToSend);
+                                    mc.s.Send(sData, 0, sData.Length, 0);
+                                }
+
+                            }
+                        }
+
+                        dSockets.TryGetValue(recipient, out kk);
+                        foreach (KeyValuePair<string, ClientHandler> val in dSockets)
+                        {
+                            ClientHandler mc = (ClientHandler)val.Value;
+
+
+                            for (int i = 0; i < kk.strr.Length; i++)
+                            {
+
+                                if (!(mc.name.Equals(recipient)) && mc.isloggedin == true && mc.name.Equals(kk.strr[i]))
+                                {
+                                    byte[] sData = Encoding.Default.GetBytes(this.name + " : " + MsgToSend);
+                                    mc.s.Send(sData, 0, sData.Length, 0);
+                                    break;
+                                }
+                            }
+                        }
+
+
+                    }
+                    catch (Exception e)
+                    {
+
+                        Console.WriteLine(e.Message);
+                    }
+                }
+            }
+
+            public void Send()
+            {
+                if (s != null)
+                {
+                    while (true)
+                    {
+                        string msg = Console.ReadLine();
+                        foreach (KeyValuePair<string, ClientHandler> val in dSockets)
+                        {
+                            ClientHandler mc = (ClientHandler)val.Value;
+                            byte[] sData = Encoding.Default.GetBytes("Server : " + msg);
+                            mc.s.Send(sData, 0, sData.Length, 0);
+                        }
+
+
                     }
                 }
             }
         }
-    }
+    
 }
