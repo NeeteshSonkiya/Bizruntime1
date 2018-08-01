@@ -11,21 +11,21 @@ namespace Rx.net
 {
     class Program2
     {
-        //static void Create()
-        //{
-        //    var observable = Observable.Range(5, 8);
-        //    IObserver<int> observer = Observer.Create<int>(
-        //     (next) => { Console.WriteLine(next); },
-        //    (error) => { Console.WriteLine($"Error:{error.Message}"); },
-        //    () => { Console.WriteLine("Completed"); }
-        //        );
-        //    var subscription = observable.Subscribe(observer);
-        //    Console.ReadKey();
-        //    subscription.Dispose();
-        //}
-        //static void Main(string[] args)
-        //{
-        //    Create();
-        //}
+        static void Create()
+        {
+            var observable = Observable.Range(5, 8);
+            IObserver<int> observer = Observer.Create<int>(
+             (next) => { Console.WriteLine(next); },
+            (error) => { Console.WriteLine($"Error:{error.Message}"); },
+            () => { Console.WriteLine("Completed"); }
+                );
+            var subscription = observable.Subscribe(observer);
+            Console.ReadKey();
+            subscription.Dispose();
+        }
+        static void Main(string[] args)
+        {
+            Create();
+        }
     }
 }
